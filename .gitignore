@@ -1,0 +1,11 @@
+# Local Kafka Server
+local-kafka-server/
+
+# IDE
+*.iml
+.idea/
+.ipr
+.vscode/
+
+# Mac stuff
+.DS_Store
