@@ -54,6 +54,7 @@ kafka-console-consumer.sh \
 ### Adding ACLs
 
 1. Add permission for `User:Bob` to write to `shopping_cart` topic.
+   If the topic shopping_list doesn't exist, make sure to provide create permission as well.
     ```shell
     kafka-acls.sh \
         --command.config client/acladmin.properties \
@@ -61,6 +62,7 @@ kafka-console-consumer.sh \
         --add \
         --allow-principal User:Bob \
         --operation Write \
+        --operation Create \
         --topic shopping_cart
     ```
 
