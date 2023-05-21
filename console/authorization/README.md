@@ -87,3 +87,12 @@ kafka-console-consumer.sh \
         --group shopping-consumer-group \
         --operation Read
     ```
+
+4. List ACLs
+   ```shell
+   bin/kafka-acls.sh \
+       --command-config client/acladmin.properties \
+       --bootstrap-server localhost:9092 \
+       --list \
+       --topic shopping_cart
+   ```
