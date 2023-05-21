@@ -6,7 +6,8 @@ If not, please replace `localhost:9092` with appropriate host and port of kafka 
 Add the following configs in `server.properties` of your Kafka server:
 
 ```properties
-# Using PLAINTEXT mechanism provides no security, and should be avoided.
+# SASL/PLAIN should be used only with SSL as transport layer to ensure that clear passwords are
+# not transmitted on the wire without encryption.
 # The configs below are just for demo, and analyse your security requirements before using.
 
 listeners=SASL_PLAINTEXT://localhost:9092,PLAINTEXT://localhost:9094
@@ -19,7 +20,7 @@ listener.name.sasl_plaintext.plain.sasl.jaas.config= \
     username="admin" \
     password="admin-secret" \
     user_admin="admin-secret" \
-    user_alice="alice-secret";
+    user_Alice="alice-secret";
 ```
 
 ### Console Producer

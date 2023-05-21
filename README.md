@@ -11,3 +11,5 @@ Trying out security with Apache Kafka
 ## Java client examples
 1. [java/simple](./java/simple/)
 2. [java/authentication](./java/authentication/)
+
+> Follow [GitHub's Contribution Guide](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) to contribute.
