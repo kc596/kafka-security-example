@@ -14,6 +14,12 @@ listener.security.protocol.map=SASL_PLAINTEXT:SASL_PLAINTEXT,PLAINTEXT:PLAINTEXT
 inter.broker.listener.name=PLAINTEXT
 sasl.mechanism.inter.broker.protocol=PLAIN
 sasl.enabled.mechanisms=PLAIN
+listener.name.sasl_plaintext.plain.sasl.jaas.config= \
+  org.apache.kafka.common.security.plain.PlainLoginModule required \
+    username="admin" \
+    password="admin-secret" \
+    user_admin="admin-secret" \
+    user_alice="alice-secret";
 ```
 
 ### Console Producer
