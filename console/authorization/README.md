@@ -90,9 +90,20 @@ kafka-console-consumer.sh \
 
 4. List ACLs
    ```shell
-   bin/kafka-acls.sh \
+   kafka-acls.sh \
        --command-config client/acladmin.properties \
        --bootstrap-server localhost:9092 \
        --list \
        --topic shopping_cart
+   ```
+
+5. Deny rule
+   ```shell
+   kafka-acls.sh \
+      --command-config client/acladmin.properties \
+      --bootstrap-server localhost:9092 \
+      --add \
+      --deny-principal User:Bob \
+      --operation Read \
+      --topic asteroid_collision
    ```
