@@ -9,3 +9,6 @@ local-kafka-server/
 
 # Mac stuff
 .DS_Store
+
+# Java
+target/

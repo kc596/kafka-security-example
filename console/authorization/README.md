@@ -3,6 +3,9 @@
 > The following example assumed that the kafka server is running locally on port `9092`.
 If not, please replace `localhost:9092` with appropriate host and port of kafka server.
 
+The `kafka-console-producer.sh`, `kafka-console-consumer.sh` and `kafka-acls.sh` are
+standard kafka CLIs present inside `bin` directory.
+
 Add the following configs in `server.properties` of your Kafka server if using Zookeeper:
 
 ```properties
