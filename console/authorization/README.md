@@ -56,7 +56,7 @@ kafka-console-consumer.sh \
 
 ### Adding ACLs
 
-1. Add permission for `User:Bob` to write to `shopping_cart` topic.
+1. Allow `User:Bob` to write to `shopping_cart` topic.
    If the topic shopping_list doesn't exist, make sure to provide create permission as well.
     ```shell
     kafka-acls.sh \
@@ -69,7 +69,7 @@ kafka-console-consumer.sh \
         --topic shopping_cart
     ```
 
-2. Add permission for `User:Alice` to read from `shopping_cart` topic.
+2. Allow `User:Alice` to read from `shopping_cart` topic.
     ```shell
     kafka-acls.sh \
         --command.config client/acladmin.properties \
@@ -80,7 +80,7 @@ kafka-console-consumer.sh \
         --topic shopping_cart
     ```
 
-3. Add permission for `User:Alice` to access the consumer group used to read from the topic.
+3. Allow `User:Alice` to access the consumer group used to read from the topic.
    ```shell
     kafka-acls.sh \
         --command.config client/acladmin.properties \
@@ -100,7 +100,7 @@ kafka-console-consumer.sh \
        --topic shopping_cart
    ```
 
-   We can list all acls affecting `shopping_cart` by using `--resource-pattern-type match`
+   List all acls affecting `shopping_cart` by using `--resource-pattern-type match`.
    ```shell
    kafka-acls.sh \
        --command-config client/acladmin.properties \
@@ -110,13 +110,22 @@ kafka-console-consumer.sh \
        --resource-pattern-type match
    ```
 
-5. Deny rule
+5. Deny `User:Alice` to read from `shopping_cart` topic.
    ```shell
    kafka-acls.sh \
-      --command-config client/acladmin.properties \
       --bootstrap-server localhost:9092 \
       --add \
-      --deny-principal User:Bob \
+      --deny-principal User:Alice \
       --operation Read \
-      --topic asteroid_collision
+      --topic shopping_cart
+   ```
+
+6. Delete acl that deny `User:Alice` to read from `shopping_cart` topic.
+   ```shell
+   kafka-acls.sh \
+      --bootstrap-server localhost:9092 \
+      --remove \
+      --deny-principal User:Alice \
+      --operation Read \
+      --topic shopping_cart
    ```
