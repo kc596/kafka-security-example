@@ -100,6 +100,16 @@ kafka-console-consumer.sh \
        --topic shopping_cart
    ```
 
+   We can list all acls affecting `shopping_cart` by using `--resource-pattern-type match`
+   ```shell
+   kafka-acls.sh \
+       --command-config client/acladmin.properties \
+       --bootstrap-server localhost:9092 \
+       --list \
+       --topic shopping_cart
+       --resource-pattern-type match
+   ```
+
 5. Deny rule
    ```shell
    kafka-acls.sh \
