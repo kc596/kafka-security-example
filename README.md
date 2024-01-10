@@ -1,5 +1,5 @@
 # kafka-security-example
-Trying out security with Apache Kafka
+Demo and examples for [Meetup on Fundamentals of Apache Kafka Security](https://forum.confluent.io/t/recording-ready-to-view-speaker-q-a-thread-31-may-2023-fundamentals-of-apache-kafka-security/8003).
 
 ## Console examples
 
